@@ -7,86 +7,111 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/cost_of_service"
+        android:id="@+id/costOfService"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/cost_of_service"
-        android:inputType="number"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/costOfService"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor" />
 
     <TextView
-        android:id="@+id/service_qst_textview"
+        android:id="@+id/serviceQst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/robotomono_regular"
         android:text="@string/service_qst"
+        android:textColor="@color/md_theme_light_onBackground"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cost_of_service" />
+        app:layout_constraintTop_toBottomOf="@+id/costOfService" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/tipOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/service_qst_textview">
+        app:layout_constraintTop_toBottomOf="@+id/serviceQst">
 
         <RadioButton
-            android:id="@+id/amazing_radiobtn"
+            android:id="@+id/amazing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotomono_regular"
             android:text="@string/amazing"
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/good_radiobtn"
+            android:id="@+id/good"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotomono_regular"
             android:text="@string/good"
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/ok_radiobtn"
+            android:id="@+id/ok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotomono_regular"
             android:text="@string/okay"
             android:textSize="16sp" />
     </RadioGroup>
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/round_up_switch"
+        android:id="@+id/roundUpSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/robotomono_regular"
         android:text="@string/round_up_tip"
-        android:textSize="16sp"
+        android:textColor="@color/md_theme_light_onBackground"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/tipOptions"
+        tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/calculateBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="monospace"
         android:text="@string/calc_btn_text"
+        android:textAllCaps="true"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/round_up_switch" />
+        app:layout_constraintTop_toBottomOf="@+id/roundUpSwitch" />
+
+    <TextView
+        android:id="@+id/tipResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/robotomono_regular"
+        android:text="@string/tip_result"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculateBtn"
+        tools:text="Tip Amount: $0.00" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
