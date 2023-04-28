@@ -6,44 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/costOfService"
+    <ImageView
+        android:id="@+id/costOfServiceIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/cost_of_service"
-        android:inputType="numberDecimal"
-        android:labelFor="@id/costOfService"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
+        android:layout_marginTop="100dp"
+        android:importantForAccessibility="no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="LabelFor" />
+        app:srcCompat="@drawable/ic_add_business" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/costOfService"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:hint="@string/cost_of_service"
+        app:layout_constraintBottom_toBottomOf="@id/costOfServiceIcon"
+        app:layout_constraintStart_toEndOf="@id/costOfServiceIcon"
+        app:layout_constraintTop_toTopOf="@id/costOfServiceIcon">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotomono_regular"
+            android:hint="@string/cost_of_service"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/serviceQstIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/costOfServiceIcon"
+        app:srcCompat="@drawable/ic_room_service" />
 
     <TextView
         android:id="@+id/serviceQst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
         android:fontFamily="@font/robotomono_regular"
         android:text="@string/service_qst"
         android:textColor="@color/md_theme_light_onBackground"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/costOfService" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/serviceQstIcon"
+        app:layout_constraintStart_toEndOf="@id/serviceQstIcon"
+        app:layout_constraintTop_toTopOf="@id/serviceQstIcon" />
 
     <RadioGroup
         android:id="@+id/tipOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serviceQst">
+        app:layout_constraintStart_toStartOf="@id/serviceQst"
+        app:layout_constraintTop_toBottomOf="@id/serviceQst">
 
         <RadioButton
             android:id="@+id/amazing"
@@ -51,7 +77,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/robotomono_regular"
             android:text="@string/amazing"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <RadioButton
             android:id="@+id/good"
@@ -59,7 +85,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/robotomono_regular"
             android:text="@string/good"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <RadioButton
             android:id="@+id/ok"
@@ -67,7 +93,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/robotomono_regular"
             android:text="@string/okay"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
     </RadioGroup>
 
     <androidx.appcompat.widget.SwitchCompat
@@ -80,7 +106,7 @@
         android:fontFamily="@font/robotomono_regular"
         android:text="@string/round_up_tip"
         android:textColor="@color/md_theme_light_onBackground"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tipOptions"
